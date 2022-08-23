@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&display=swap');
+
+*,
+*:before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Dosis', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #252c3a;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+@media (min-width: 64em) {
+    .container {
+        padding-left: 200px;
+        padding-right: 200px;
+        max-width: 1470px;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-jc-sb {
+    justify-content: space-between;
+}
+
+.flex-jc-c {
+    justify-content: center;
+}
+
+.flex-ai-c {
+    align-items: center;
+}
+
+.main-navigation {
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+    position: fixed;
+
+}
+
+
+.header nav {
+    height: 65px;
+}
+
+.toggle-menu {
+    margin-left:15px;
+    cursor: pointer;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    opacity: 0;
+}
+
+.overlay.open {
+    opacity: 1;
+}
+
+@media (min-width: 64em) {
+    .header nav {
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .header nav .logo{
+        position: fixed;
+        left: 200px;
+        top: 15px;
+    }
+
+    .header .main-navigation a {
+        margin-right: 30px;
+        position: relative;
+    }
+
+    .header .main-navigation a:hover {
+        opacity: .8;
+    }
+
+    .header .main-navigation a::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: -30px;
+        width: 100%;
+        height: 4px;
+        background-color: #e74c3c;
+        transition: 0.2s linear;
+        opacity: 0;
+    }
+
+    .header .main-navigation a:hover::after{
+        opacity: 1;
+    }
+
+    .navigations .main-navigation {
+        margin-right: -300px;
+    }
+}
+
+.mobile-navigation .close-menu {
+    display: block;
+    cursor: pointer;
+    margin: 10px 0 20px 20px;
+}
+
+/* .mobile-navigation .close-menu */
+
+.mobile-navigation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100%;
+    transform: translateX(-100%);
+    background-color: rgb(255, 255, 255);
+    transition: 0.2s ease-in-out;    
+}
+
+.mobile-navigation a {
+    display: block;
+    margin-top: 50px;
+    margin-left: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    transition: .2s linear;
+}
+
+.mobile-navigation.open {
+    transform: translateX(0);
+}
+
+.mobile-navigation a:hover {
+    padding-left: 20px;
+    color: #252c3a;
+    opacity: .6;
+    transition: .2s linear;
+
+}
+
+@media (min-width: 40em) {
+    .mobile-navigation {
+        width: 450px;
+    }
+}
+
+
+@media (max-width: 64em) {
+    .header nav .logo{
+        position: absolute;
+        right: 0;
+        top: 15px;
+        margin-right: 30px;
+    }
+}
+
+@media (min-width: 64em) {
+    .hide-for-desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 63.9375em) {
+    .hide-for-mobile {
+        display: none;
+    }
+}
