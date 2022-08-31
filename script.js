@@ -2,6 +2,17 @@ const closeMenu = document.querySelector('.close-menu')
 const mobielNavigation = document.querySelector('.mobile-navigation')
 const burgerIcon = document.querySelector('.toggle-menu')
 const overlay = document.querySelector('.overlay')
+const compsID = document.querySelectorAll('#complement')
+const imageComplement = document.querySelector('.complement-image')
+
+
+compsID.forEach(comp => {
+    comp.addEventListener('click', () => {
+        const complement = comp.getAttribute('src')
+        imageComplement.setAttribute('src', complement)
+    })
+})
+
 
 
 
